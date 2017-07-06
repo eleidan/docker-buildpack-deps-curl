@@ -17,6 +17,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       ca-certificates \
       curl \
       wget \
+      gnupg2 \
+      dirmngr \
     && rm -rf /var/lib/apt/lists/*
 
 RUN dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" \
