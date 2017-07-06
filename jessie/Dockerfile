@@ -3,13 +3,13 @@ FROM eleidan/debian:jessie
 LABEL maintainer="Oleg Kulyk" \
       description="Debian GNU/Linux 8 (jessie), curl" \
       run="docker run -it --rm -v $(pwd):/home/phantom/app eleidan/buildpack-deps:jessie-curl" \
-      version="2017-05-08"
+      version="2017-07-06"
 
-ARG CUSTOM_USER=phantom
+ARG CUSTOM_USER="phantom"
 
 ENV SERVICE_NAME="buildpack-deps:jessie-curl" \
-    HOME=/home/$CUSTOM_USER \
-    GOSU_VERSION=1.9
+    HOME="/home/$CUSTOM_USER" \
+    GOSU_VERSION="1.10"
 
 COPY docker-entrypoint.sh /
 
@@ -17,8 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       ca-certificates \
       curl \
       wget \
-    && rm -rf /var/lib/apt/lists/* \
-    && dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" \
     && wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch" \
     && wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc" \
     && export GNUPGHOME="$(mktemp -d)" \

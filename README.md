@@ -1,1 +1,1 @@
-# docker-buildpack-deps-curl
+# Custom buildpack-deps-curl
