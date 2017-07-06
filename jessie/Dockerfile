@@ -2,12 +2,12 @@ FROM eleidan/debian:jessie
 
 LABEL maintainer="Oleg Kulyk" \
       description="Debian GNU/Linux jessie, curl" \
-      run="docker run -it --rm -v $(pwd):/home/phantom/app eleidan/buildpack-deps:jessie-curl" \
+      run="docker run -it --rm -v $(pwd):/home/phantom/app eleidan/buildpack-deps-curl:jessie" \
       version="2017-07-06"
 
 ARG CUSTOM_USER="phantom"
 
-ENV SERVICE_NAME="buildpack-deps:jessie-curl" \
+ENV SERVICE_NAME="buildpack-deps-curl:jessie" \
     HOME="/home/$CUSTOM_USER" \
     GOSU_VERSION="1.10"
 

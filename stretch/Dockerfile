@@ -2,12 +2,12 @@ FROM eleidan/debian:stretch
 
 LABEL maintainer="Oleg Kulyk" \
       description="Debian GNU/Linux stretch, curl" \
-      run="docker run -it --rm -v $(pwd):/home/phantom/app eleidan/buildpack-deps:stretch-curl" \
+      run="docker run -it --rm -v $(pwd):/home/phantom/app eleidan/buildpack-deps-curl:stretch" \
       version="2017-07-06"
 
 ARG CUSTOM_USER="phantom"
 
-ENV SERVICE_NAME="buildpack-deps:stretch-curl" \
+ENV SERVICE_NAME="buildpack-deps-curl:stretch" \
     HOME="/home/$CUSTOM_USER" \
     GOSU_VERSION="1.10"
 
