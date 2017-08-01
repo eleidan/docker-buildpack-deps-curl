@@ -16,7 +16,6 @@ RUN yum -y install \
 
 RUN set -ex; \
     if ! command -v gpg > /dev/null; then \
-      # yum -y update; \
       yum -y install \
         gnupg2 \
         dirmngr \
