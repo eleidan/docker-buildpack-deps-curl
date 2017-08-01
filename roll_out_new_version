@@ -101,6 +101,9 @@ case $FAMILY in
   ubuntu )
     BASE_RELEASE="xenial"
     ;;
+  centos )
+    BASE_RELEASE="6.6"
+    ;;
 esac
 cp -r $BASE_RELEASE $RELEASE_VERSION
 
