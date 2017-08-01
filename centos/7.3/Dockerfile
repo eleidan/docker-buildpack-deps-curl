@@ -1,4 +1,4 @@
-FROM eleidan/centos:7.3.1611
+FROM eleidan/centos:7.3
 
 LABEL maintainer="Oleg Kulyk" \
       description="CentOS 7.3.1611, curl" \
