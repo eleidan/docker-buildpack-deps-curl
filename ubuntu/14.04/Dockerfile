@@ -1,13 +1,13 @@
-FROM eleidan/ubuntu:trusty
+FROM eleidan/ubuntu:14.04
 
 LABEL maintainer="Oleg Kulyk" \
-      description="Ubuntu 14.04 trusty, curl" \
-      run="docker run -it --rm -v $(pwd):/home/phantom/app eleidan/buildpack-deps-curl:trusty" \
+      description="Ubuntu 14.04, curl" \
+      run="docker run -it --rm -v $(pwd):/home/phantom/app eleidan/buildpack-deps-curl:14.04" \
       version="2017-07-09"
 
 ARG CUSTOM_USER="phantom"
 
-ENV SERVICE_NAME="buildpack-deps-curl:trusty" \
+ENV SERVICE_NAME="buildpack-deps-curl:14.04" \
     HOME="/home/$CUSTOM_USER" \
     GOSU_VERSION="1.10"
 

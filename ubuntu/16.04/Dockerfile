@@ -1,13 +1,13 @@
-FROM eleidan/ubuntu:xenial
+FROM eleidan/ubuntu:16.04
 
 LABEL maintainer="Oleg Kulyk" \
-      description="Ubuntu 16.04 xenial, curl" \
-      run="docker run -it --rm -v $(pwd):/home/phantom/app eleidan/buildpack-deps-curl:xenial" \
+      description="Ubuntu 16.04, curl" \
+      run="docker run -it --rm -v $(pwd):/home/phantom/app eleidan/buildpack-deps-curl:16.04" \
       version="2017-07-09"
 
 ARG CUSTOM_USER="phantom"
 
-ENV SERVICE_NAME="buildpack-deps-curl:xenial" \
+ENV SERVICE_NAME="buildpack-deps-curl:16.04" \
     HOME="/home/$CUSTOM_USER" \
     GOSU_VERSION="1.10"
 
