@@ -2,12 +2,12 @@ FROM eleidan/ubuntu:14.04
 
 LABEL maintainer="Oleg Kulyk" \
       description="Ubuntu 14.04, curl" \
-      run="docker run -it --rm -v $(pwd):/home/phantom/app eleidan/buildpack-deps-curl:14.04" \
+      run="docker run -it --rm -v $(pwd):/home/phantom/app eleidan/buildpack-deps-curl:ubuntu-14.04" \
       version="2017-07-09"
 
 ARG CUSTOM_USER="phantom"
 
-ENV SERVICE_NAME="buildpack-deps-curl:14.04" \
+ENV SERVICE_NAME="buildpack-deps-curl:ubuntu-14.04" \
     HOME="/home/$CUSTOM_USER" \
     GOSU_VERSION="1.10"
 
